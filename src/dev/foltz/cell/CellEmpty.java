@@ -6,16 +6,16 @@ import static dev.foltz.cell.TypeCell.CELL_EMPTY;
 
 public final class CellEmpty extends Cell {
     public CellEmpty() {
-        super(CELL_EMPTY, Map.of());
-        this.density = 0;
+        super(CELL_EMPTY);
+    }
+
+    @Override
+    public float density() {
+        return 0f;
     }
 
     public int color() {
         return 0;
-    }
-
-    public boolean ofType(TypeCell type) {
-        return type == CELL_EMPTY;
     }
 
     public boolean isEmpty() {

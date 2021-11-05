@@ -20,6 +20,7 @@ public class Util {
     }
 
     public static final Random RNG = new Random();
+
     public static float random(float n) {
         return RNG.nextFloat(n);
     }
@@ -36,6 +37,30 @@ public class Util {
         return RNG.nextInt(min, max);
     }
 
+    public static boolean chance(float p) {
+        return random(1f) > p;
+    }
+
+    public static int floor(float x) {
+        return (int) Math.floor(x);
+    }
+
+    public static int sign(int x) {
+        return x == 0 ? 0 : (x < 0 ? -1 : 1);
+    }
+
+    public static int sign(float x) {
+        return x == 0 ? 0 : (x < 0 ? -1 : 1);
+    }
+
+    public static int abs(int x) {
+        return x < 0 ? -x : x;
+    }
+
+    public static float abs(float x) {
+        return x < 0 ? -x : x;
+    }
+
     public static int min(int a, int b) {
         return a <= b ? a : b;
     }
@@ -44,8 +69,24 @@ public class Util {
         return a <= b ? a : b;
     }
 
+    public static int max(int a, int b) {
+        return a >= b ? a : b;
+    }
+
     public static float max(float a, float b) {
         return a >= b ? a : b;
+    }
+
+    public static int constrain(int x, int a, int b) {
+        int lo = min(a, b);
+        int hi = max(a, b);
+        return max(lo, min(hi, x));
+    }
+
+    public static float constrain(float x, float a, float b) {
+        float lo = min(a, b);
+        float hi = max(a, b);
+        return max(lo, min(hi, x));
     }
 
     public static float map(float x, float smin, float smax, float dmin, float dmax) {

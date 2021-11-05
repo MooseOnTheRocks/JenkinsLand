@@ -1,5 +1,6 @@
 package dev.foltz.cell;
 
+// Static information associated with each Cell type.
 public enum TypeCell {
     CELL_OUT_OF_BOUNDS,
     CELL_EMPTY,
