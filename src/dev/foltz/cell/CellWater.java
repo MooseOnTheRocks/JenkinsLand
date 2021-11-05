@@ -30,7 +30,7 @@ public class CellWater extends Cell {
         float pb1 = b1.capacityOf(WATER) == 0 ? 0 : b1.amountOf(WATER) / (float) b1.capacityOf(WATER);
         float pb2 = b2.capacityOf(WATER) == 0 ? 0 : b2.amountOf(WATER) / (float) b2.capacityOf(WATER);
         float pressureDiff = (pb2 + pb1) - (pa2 + pa1);
-        if (pressureDiff < 0.1) {
+        if (pressureDiff < 0) {
             giveQuanta(b1, WATER, 1);
         }
         else if (neighbor.amountOf(WATER) < amountOf(WATER) || random(1f) > 0.9f) {
