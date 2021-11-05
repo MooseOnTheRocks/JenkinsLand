@@ -38,13 +38,11 @@ public class BonsaiSketch extends PApplet {
         int seedStone = (int) random(1000);
         noiseSeed(seedStone);
         for (int i = 0; i < w; i++) {
-            for (int j = 0; j < h; j++) {
-                float p = j / (float) h;
-                float v = noise(100 + i * 0.3f, 230 + j * 0.1f, (1-p) * 50f);
-                float stoneFactor = v * p;
-                if (stoneFactor > 0.5 || j > h - 5) {
-                    world.setCell(i, j, new CellStone());
-                }
+            float v = noise(100 + i * 0.1f);
+            int top = (int) map(v*v, 0, 1, 12, 40);
+            for (int j = 0; j < top; j++) {
+                int y = h - j;
+                world.setCell(i, y, new CellStone());
             }
         }
     }

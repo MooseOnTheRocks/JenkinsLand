@@ -13,7 +13,7 @@ public class CellStone extends Cell {
     }
 
     public Cell tick(World world, int x, int y) {
-        return super.updateGravity(world, x, y);
+        return this;
     }
 
     public int color() {
